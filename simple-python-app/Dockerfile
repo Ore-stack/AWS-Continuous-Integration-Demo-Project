@@ -1,23 +1,23 @@
-# Base image
+# Use the official Python 3.8 image as the base
 FROM python:3.8
 
-# Set the working directory inside the container
+# Define the working directory within the container
 WORKDIR /app
 
-# Copy the requirements file
+# Add the requirements file to the container
 COPY requirements.txt .
 
-# Install the project dependencies
+# Install dependencies listed in the requirements file
 RUN pip install -r requirements.txt
 
-# Copy the application code into the container
+# Add the application code to the container
 COPY . .
 
-# Expose the port the Flask application will be listening on
+# Open port 5000 for the Flask app
 EXPOSE 5000
 
-# Set environment variables, if necessary
+# Optional: Set environment variables
 # ENV MY_ENV_VAR=value
 
-# Run the Flask application
-CMD ["python", "app.py"]
+# Start the Flask application
+CMD ["python", "app.py"]]
