@@ -1,0 +1,13 @@
+version: 0.0
+operating_system: linux
+
+events:
+  ApplicationStop:
+    - path: scripts/stop_container.sh
+      duration: 300
+      execute_as: root
+  AfterInstall:
+    - path: scripts/start_container.sh
+      duration: 300
+      execute_as: root
+
