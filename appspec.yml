@@ -1,13 +1,12 @@
 version: 0.0
-operating_system: linux
+os: linux
 
-events:
+hooks:
   ApplicationStop:
-    - path: ./stop_container.sh
-      duration: 300
-      execute_as: root
+    - location: ./stop_container.sh
+      timeout: 300
+      runas: root
   AfterInstall:
-    - path: ./start_container.sh
-      duration: 300
-      execute_as: root
-
+    - location: ./start_container.sh
+      timeout: 300
+      runas: root
